@@ -1,14 +1,6 @@
-
-User_1 = 'Alice'
-p_1 = 'C00peR'
-
-User_2 = 'Bob'
-p_2 = 'uNc1e'
-
-User_3 = 'Carl'
-p_3 = 'ClariNet'
-
-
+users = {'Alice':'C00peR',
+         'Bob': 'uNc1e',
+         'Carl': 'ClariNet'}
 
 def check_password(name_user = "Intruder"):
     i = 3
@@ -16,16 +8,9 @@ def check_password(name_user = "Intruder"):
     while i > 0:
         question = input('Enter your password, please : ')
         i = i - 1
-        if question == p_1:
-            name_user = User_1
-            check_auth_code(name = name_user)
-            break
-        elif question == p_2:
-            name_user = User_2
-            check_auth_code(name = name_user)
-            break
-        elif question == p_3:
-            name_user = User_3
+        if question in users.values():
+            login = [key for key, value in users.items() if value == question]
+            name_user = login[0]
             check_auth_code(name = name_user)
             break
         else:
