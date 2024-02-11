@@ -1,12 +1,9 @@
-users = {'Alice':'C00peR',
-         'Bob': 'uNc1e',
-         'Carl': 'ClariNet'}
+class PositiveNumber:
+    def __init__(self):
+        self.__value = None
 
-question = input("Dawai: ")
+    @property
+    def value(self):
+        return self.__value
 
-if question in users.values():
-    print("yes")
-    login = [key for key, value in users.items() if value == question]
-    print(login[0])
-else:
-    print('no')
+    
